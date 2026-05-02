@@ -19,9 +19,13 @@ export const AccountNav: React.FC<Props> = ({ className }) => {
           <Button asChild variant="link">
             <Link
               href="/account"
-              className={clsx('text-primary/50 hover:text-primary hover:no-underline', {
-                'text-primary': pathname === '/account',
-              })}
+              // Swapped primary/50 for muted-foreground to fix the blurry/light text
+              className={clsx(
+                'text-muted-foreground hover:text-primary hover:no-underline transition-colors',
+                {
+                  'text-primary': pathname === '/account',
+                },
+              )}
             >
               Account settings
             </Link>
@@ -32,9 +36,12 @@ export const AccountNav: React.FC<Props> = ({ className }) => {
           <Button asChild variant="link">
             <Link
               href="/account/addresses"
-              className={clsx('text-primary/50 hover:text-primary hover:no-underline', {
-                'text-primary': pathname === '/account/addresses',
-              })}
+              className={clsx(
+                'text-muted-foreground hover:text-primary hover:no-underline transition-colors',
+                {
+                  'text-primary': pathname === '/account/addresses',
+                },
+              )}
             >
               Addresses
             </Link>
@@ -45,23 +52,30 @@ export const AccountNav: React.FC<Props> = ({ className }) => {
           <Button
             asChild
             variant="link"
-            className={clsx('text-primary/50 hover:text-primary hover:no-underline', {
-              'text-primary': pathname === '/orders' || pathname.includes('/orders'),
-            })}
+            className={clsx(
+              'text-muted-foreground hover:text-primary hover:no-underline transition-colors',
+              {
+                'text-primary': pathname === '/orders' || pathname.includes('/orders'),
+              },
+            )}
           >
             <Link href="/orders">Orders</Link>
           </Button>
         </li>
       </ul>
 
-      <hr className="w-full border-white/5" />
+      {/* Swapped border-white/5 for border-border to ensure visibility in both themes */}
+      <hr className="w-full border-border my-4" />
 
       <Button
         asChild
         variant="link"
-        className={clsx('text-primary/50 hover:text-primary hover:no-underline', {
-          'text-primary': pathname === '/logout',
-        })}
+        className={clsx(
+          'text-muted-foreground hover:text-primary hover:no-underline transition-colors',
+          {
+            'text-primary': pathname === '/logout',
+          },
+        )}
       >
         <Link href="/logout">Log out</Link>
       </Button>

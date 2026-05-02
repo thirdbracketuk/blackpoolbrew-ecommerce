@@ -1,10 +1,10 @@
-import type { Product, Variant } from '@/payload-types'
+import type { Product } from '@/payload-types'
 
-import Link from 'next/link'
-import React from 'react'
-import clsx from 'clsx'
 import { Media } from '@/components/Media'
 import { Price } from '@/components/Price'
+import clsx from 'clsx'
+import Link from 'next/link'
+import React from 'react'
 
 type Props = {
   product: Partial<Product>
@@ -48,7 +48,7 @@ export const ProductGridItem: React.FC<Props> = ({ product }) => {
         />
       ) : null}
 
-      <div className="font-mono text-primary/50 group-hover:text-primary flex justify-between items-center mt-4">
+      <div className="font-mono text-muted-foreground group-hover:text-primary transition-colors flex justify-between items-center mt-4">
         <div>{title}</div>
 
         {typeof price === 'number' && (
