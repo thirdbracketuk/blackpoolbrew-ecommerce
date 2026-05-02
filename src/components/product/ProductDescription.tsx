@@ -55,7 +55,7 @@ export function ProductDescription({ product }: { product: Product }) {
     <div className="flex flex-col gap-6">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
         {/* text-foreground ensures sharp contrast for the product title */}
-        <h1 className="text-2xl font-medium text-foreground">{product.title}</h1>
+        <h1 className="text-3xl font-bold text-foreground">{product.title}</h1>
 
         {/* text-primary applies the brand orange to the price */}
         <div className="uppercase font-mono text-primary">

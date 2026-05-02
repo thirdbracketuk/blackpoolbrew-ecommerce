@@ -110,7 +110,7 @@ export function HeaderClient({ header }: Props) {
           <div className="flex w-full items-end gap-6 md:w-1/3">
             <Link className="flex w-full items-center justify-center pt-4 pb-4 md:w-auto" href="/">
               {/* Added text-primary so the logo uses your brand orange color */}
-              <LogoIcon className="w-6 h-auto text-primary" />
+              <LogoIcon className="w-7 h-auto text-primary" />
             </Link>
             {menu.length ? (
               <ul className="hidden gap-4 text-sm md:flex md:items-center">

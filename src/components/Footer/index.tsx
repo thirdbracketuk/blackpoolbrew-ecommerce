@@ -1,11 +1,11 @@
 import type { Footer } from '@/payload-types'
 
 import { FooterMenu } from '@/components/Footer/menu'
+import { LogoIcon } from '@/components/icons/logo'
 import { ThemeSelector } from '@/providers/Theme/ThemeSelector'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 import Link from 'next/link'
-import React, { Suspense } from 'react'
-import { LogoIcon } from '@/components/icons/logo'
+import { Suspense } from 'react'
 
 const { COMPANY_NAME, SITE_NAME } = process.env
 
@@ -14,23 +14,23 @@ export async function Footer() {
   const menu = footer.navItems || []
   const currentYear = new Date().getFullYear()
   const copyrightDate = 2023 + (currentYear > 2023 ? `-${currentYear}` : '')
-  const skeleton = 'w-full h-6 animate-pulse rounded bg-neutral-200 dark:bg-neutral-700'
+  const skeleton = 'w-full h-6 animate-pulse rounded bg-muted dark:bg-neutral-700'
 
   const copyrightName = COMPANY_NAME || SITE_NAME || ''
 
   return (
-    <footer className="text-sm text-neutral-500 dark:text-neutral-400">
+    <footer className=" text-muted-foreground">
       <div className="container">
-        <div className="flex w-full flex-col gap-6 border-t border-neutral-200 py-12 text-sm md:flex-row md:gap-12 dark:border-neutral-700">
+        <div className="flex w-full flex-col gap-6 border-t border-border py-12 text-sm md:flex-row md:gap-12 ">
           <div>
-            <Link className="flex items-center gap-2 text-black md:pt-1 dark:text-white" href="/">
+            <Link className="flex items-center gap-2 text-foreground" href="/">
               <LogoIcon className="w-6" />
               <span className="sr-only">{SITE_NAME}</span>
             </Link>
           </div>
           <Suspense
             fallback={
-              <div className="flex h-[188px] w-[200px] flex-col gap-2">
+              <div className="flex h-47 w-50 flex-col gap-2">
                 <div className={skeleton} />
                 <div className={skeleton} />
                 <div className={skeleton} />
@@ -53,10 +53,10 @@ export async function Footer() {
             &copy; {copyrightDate} {copyrightName}
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
-          <hr className="mx-4 hidden h-4 w-px border-l border-neutral-400 md:inline-block" />
+          <hr className="mx-4 hidden h-4 w-px border-l border-border md:inline-block" />
           <p>Designed in Michigan</p>
           <p className="md:ml-auto">
-            <a className="text-black dark:text-white" href="https://payloadcms.com">
+            <a className="text-foreground" href="https://payloadcms.com">
               Crafted by Payload
             </a>
           </p>

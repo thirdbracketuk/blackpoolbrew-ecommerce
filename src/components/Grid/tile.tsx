@@ -1,7 +1,7 @@
 import type { Media as MediaType } from '@/payload-types'
 
-import { Media } from '@/components/Media'
 import { Label } from '@/components/Grid/Label'
+import { Media } from '@/components/Media'
 import clsx from 'clsx'
 import React from 'react'
 
@@ -25,9 +25,9 @@ export const GridTileImage: React.FC<Props> = ({
   return (
     <div
       className={clsx(
-        'group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black',
+        'group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-primary dark:bg-black',
         {
-          'border-2 border-blue-600': active,
+          'border-2 border-primary': active,
           'border-neutral-200 dark:border-neutral-800': !active,
           relative: label,
         },

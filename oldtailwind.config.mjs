@@ -88,35 +88,12 @@ export default {
       typography: {
         DEFAULT: {
           css: {
-            '--tw-prose-body': 'var(--foreground)',
-            '--tw-prose-headings': 'var(--foreground)',
-            '--tw-prose-links': 'var(--primary)',
-            '--tw-prose-bold': 'var(--foreground)',
-            '--tw-prose-counters': 'var(--muted-foreground)',
-            '--tw-prose-bullets': 'var(--muted-foreground)',
-            '--tw-prose-hr': 'var(--border)',
-            '--tw-prose-quotes': 'var(--foreground)',
-            '--tw-prose-quote-borders': 'var(--primary)',
-            '--tw-prose-code': 'var(--foreground)',
-            '--tw-prose-invert-body': 'var(--foreground)',
-            '--tw-prose-invert-headings': 'var(--foreground)',
+            '--tw-prose-body': 'var(--text)',
+            '--tw-prose-headings': 'var(--text)',
             h1: {
-              fontSize: '2.5rem',
-              fontWeight: '700',
-              lineHeight: '1.15',
-              letterSpacing: '-0.02em',
-              marginBottom: '0.5em',
-            },
-            h2: {
-              fontSize: '2rem',
-              fontWeight: '700',
-              lineHeight: '1.2',
-              letterSpacing: '-0.015em',
-            },
-            h3: {
-              fontSize: '1.5rem',
-              fontWeight: '600',
-              lineHeight: '1.3',
+              fontSize: '4rem',
+              fontWeight: 'normal',
+              marginBottom: '0.25em',
             },
             a: {
               color: 'inherit',

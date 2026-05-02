@@ -48,7 +48,7 @@ export const ProductGridItem: React.FC<Props> = ({ product }) => {
         />
       ) : null}
 
-      <div className="font-mono text-muted-foreground group-hover:text-primary transition-colors flex justify-between items-center mt-4">
+      <div className="font-medium text-sm text-foreground group-hover:text-primary transition-colors flex justify-between items-center mt-4">
         <div>{title}</div>
 
         {typeof price === 'number' && (
