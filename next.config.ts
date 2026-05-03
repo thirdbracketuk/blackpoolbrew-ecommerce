@@ -23,18 +23,26 @@ const nextConfig = {
   images: {
     localPatterns: [
       {
-        pathname: '/api/media/file/**',
+        pathname: '/api/media/**',
       },
     ],
     qualities: [90, 100],
     remotePatterns: [
-      ...[NEXT_PUBLIC_SERVER_URL /* 'https://example.com' */].map((item) => {
+      ...[NEXT_PUBLIC_SERVER_URL].map((item) => {
         const url = new URL(item)
         return {
           hostname: url.hostname,
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       }),
+      {
+        hostname: 'hc4cw8kcsskswws0skkwskws.app.thirdbracket.co.uk',
+        protocol: 'https' as const,
+      },
+      {
+        hostname: 'localhost',
+        protocol: 'http' as const,
+      },
     ],
   },
   reactStrictMode: true,
