@@ -9,7 +9,7 @@ export function LogoIcon(props: React.ComponentProps<'svg'>) {
         viewBox="0 0 25 28"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
-        className={clsx('h-4 w-4 fill-black dark:fill-white', props.className)}
+        className={clsx('h-4 w-4', props.className)}
       >
         <defs>
           <linearGradient
@@ -99,7 +99,6 @@ export function LogoIcon(props: React.ComponentProps<'svg'>) {
           />
         </g>
       </svg>
-      <span className="ml-2">BlackpoolBrew</span>
     </>
   )
 }

@@ -54,10 +54,17 @@ export async function Footer() {
             {copyrightName.length && !copyrightName.endsWith('.') ? '.' : ''} All rights reserved.
           </p>
           <hr className="mx-4 hidden h-4 w-px border-l border-border md:inline-block" />
-          <p>Designed in Michigan</p>
+          <p>Designed in Habiganj, Bangladesh</p>
           <p className="md:ml-auto">
-            <a className="text-foreground" href="https://payloadcms.com">
-              Crafted by Payload
+            Crafted by{' '}
+            <a
+              className="text-foreground"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Visit ThirdBracket - Web Development Agency"
+              href="https://thirdbracket.co.uk"
+            >
+              ThirdBracket
             </a>
           </p>
         </div>

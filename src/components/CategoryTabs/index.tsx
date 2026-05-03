@@ -1,6 +1,6 @@
 import configPromise from '@payload-config'
-import { getPayload } from 'payload'
 import clsx from 'clsx'
+import { getPayload } from 'payload'
 import React, { Suspense } from 'react'
 
 import { Item } from './Item'
@@ -47,7 +47,7 @@ export function CategoryTabs() {
   return (
     <Suspense
       fallback={
-        <div className="col-span-2 hidden h-[400px] w-full flex-none py-4 lg:block">
+        <div className="col-span-2 hidden h-100 w-full flex-none py-4 lg:block">
           <div className={clsx(skeleton, activeAndTitles)} />
           <div className={clsx(skeleton, activeAndTitles)} />
           <div className={clsx(skeleton, items)} />
