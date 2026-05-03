@@ -41,11 +41,19 @@ export function AddToCart({ product }: Props) {
     (e: React.FormEvent<HTMLButtonElement>) => {
       e.preventDefault()
 
+      // addItem({
+      //   product: product.id,
+      //   variant: selectedVariant?.id ?? undefined,
+      // }).then(() => {
+      //   toast.success('Item added to cart.')
+      // })
+
       addItem({
         product: product.id,
         variant: selectedVariant?.id ?? undefined,
       }).then(() => {
         toast.success('Item added to cart.')
+        window.dispatchEvent(new CustomEvent('open-cart'))
       })
     },
     [addItem, product, selectedVariant],
@@ -97,7 +105,7 @@ export function AddToCart({ product }: Props) {
   return (
     <Button
       aria-label="Add to cart"
-      variant={'outline'}
+      variant={'default'}
       className={clsx({
         'hover:opacity-90': true,
       })}

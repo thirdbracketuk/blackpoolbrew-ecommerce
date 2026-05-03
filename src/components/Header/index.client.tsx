@@ -112,11 +112,10 @@ export function HeaderClient({ header }: Props) {
               className="flex w-full items-center gap-2 justify-center pt-4 pb-4 md:w-auto"
               href="/"
             >
-              {/* Icon only — no internal wordmark */}
-              <LogoIcon className="w-7 h-auto text-primary" />
-              <span className="font-semibold text-sm tracking-tight leading-none">
-                BlackpoolBrew
-              </span>
+              <div className="flex items-center justify-center w-8 h-8 p-0.5 rounded-full bg-[#140b07]">
+                <LogoIcon className="w-6 h-auto text-primary" />
+              </div>
+              <span className="font-semibold text-sm tracking-tight">BlackpoolBrew</span>
             </Link>
             {menu.length ? (
               <ul className="hidden gap-4 text-sm md:flex md:items-center">

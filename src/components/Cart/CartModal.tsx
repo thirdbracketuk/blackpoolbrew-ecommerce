@@ -219,10 +219,16 @@ export function CartModal() {
 
   const pathname = usePathname()
 
+  // useEffect(() => {
+  //   // Close the cart modal when the pathname changes.
+  //   setIsOpen(false)
+  // }, [pathname])
+
   useEffect(() => {
-    // Close the cart modal when the pathname changes.
-    setIsOpen(false)
-  }, [pathname])
+    const handler = () => setIsOpen(true)
+    window.addEventListener('open-cart', handler)
+    return () => window.removeEventListener('open-cart', handler)
+  }, [])
 
   const totalQuantity = useMemo(() => {
     if (!cart || !cart.items || !cart.items.length) return undefined
