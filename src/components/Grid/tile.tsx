@@ -29,7 +29,7 @@ export const GridTileImage: React.FC<Props> = ({
         {
           'border-2 border-primary': active,
           'border-neutral-200 dark:border-neutral-800': !active,
-          relative: true,
+          relative: label,
         },
       )}
     >
@@ -38,7 +38,8 @@ export const GridTileImage: React.FC<Props> = ({
           className={clsx('relative h-full w-full ', {
             'transition duration-300 ease-in-out group-hover:scale-105': isInteractive,
           })}
-          fill
+          height={500}
+          width={500}
           imgClassName="h-full w-full object-cover"
           resource={props.media}
         />
