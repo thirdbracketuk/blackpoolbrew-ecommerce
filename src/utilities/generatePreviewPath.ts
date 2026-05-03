@@ -1,9 +1,12 @@
-import { PreviewSearchParams } from '@/app/(frontend)/next/preview/route'
-import { PayloadRequest, CollectionSlug } from 'payload'
+import { CollectionSlug, PayloadRequest } from 'payload'
 
 const collectionPrefixMap: Partial<Record<CollectionSlug, string>> = {
-  posts: '/posts',
   pages: '',
+}
+
+type PreviewSearchParams = {
+  path: string
+  previewSecret: string
 }
 
 type Props = {
@@ -26,6 +29,5 @@ export const generatePreviewPath = ({ collection, slug }: Props) => {
   } satisfies PreviewSearchParams)
 
   const url = `/next/preview?${encodedParams.toString()}`
-
   return url
 }
