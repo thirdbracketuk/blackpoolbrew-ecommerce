@@ -1,4 +1,5 @@
 import { withPayload } from '@payloadcms/next/withPayload'
+import type { NextConfig } from 'next'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { redirects } from './redirects'
@@ -8,22 +9,15 @@ const dirname = path.dirname(__filename)
 
 const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
-// Temporarily required on Windows until Next.js fixes Turbopack Sass resolution.
-// See: https://github.com/vercel/next.js/issues/86431
-const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
+const nextConfig: NextConfig = {
   sassOptions: {
     loadPaths: ['./node_modules/@payloadcms/ui/dist/scss/'],
   },
   images: {
+    dangerouslyAllowLocalIP: true, // required for VPS — Next.js 16 blocks loopback by default
     localPatterns: [
       {
-        pathname: '/api/media/**',
+        pathname: '/api/media/file/**',
       },
     ],
     qualities: [90, 100],
@@ -35,19 +29,11 @@ const nextConfig = {
           protocol: url.protocol.replace(':', '') as 'http' | 'https',
         }
       }),
-      {
-        hostname: 'hc4cw8kcsskswws0skkwskws.app.thirdbracket.co.uk',
-        protocol: 'https' as const,
-      },
-      {
-        hostname: 'localhost',
-        protocol: 'http' as const,
-      },
     ],
   },
   reactStrictMode: true,
   redirects,
-  webpack: (webpackConfig: any) => {
+  webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {
       '.cjs': ['.cts', '.cjs'],
       '.js': ['.ts', '.tsx', '.js', '.jsx'],
