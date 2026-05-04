@@ -1,6 +1,5 @@
 import clsx from 'clsx'
 import { XIcon } from 'lucide-react'
-import React from 'react'
 
 export function CloseCart({ className }: { className?: string }) {
   return (

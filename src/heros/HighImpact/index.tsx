@@ -55,7 +55,7 @@ import { RichText } from '@/components/RichText'
 
 export const HighImpactHero: React.FC<Page['hero']> = ({ links, media, richText }) => {
   return (
-    <div className="container py-16 md:py-24">
+    <div className="container py-16 md:py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text column */}
         <div>

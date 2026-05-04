@@ -54,11 +54,8 @@ export function ProductDescription({ product }: { product: Product }) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-        {/* text-foreground ensures sharp contrast for the product title */}
-        <h1 className="text-3xl font-bold text-foreground">{product.title}</h1>
-
-        {/* text-primary applies the brand orange to the price */}
-        <div className="uppercase font-mono text-primary">
+        <h1 className="text-2xl font-medium">{product.title}</h1>
+        <div className="uppercase font-mono">
           {hasVariants ? (
             <Price highestAmount={highestAmount} lowestAmount={lowestAmount} />
           ) : (
@@ -66,34 +63,22 @@ export function ProductDescription({ product }: { product: Product }) {
           )}
         </div>
       </div>
-
       {product.description ? (
-        /* text-muted-foreground ensures readable description text */
-        <RichText
-          className="text-muted-foreground"
-          data={product.description}
-          enableGutter={false}
-        />
+        <RichText className="" data={product.description} enableGutter={false} />
       ) : null}
-
-      <hr className="border-border" />
-
+      <hr />
       {hasVariants && (
         <>
           <Suspense fallback={null}>
             <VariantSelector product={product} />
           </Suspense>
 
-          <hr className="border-border" />
+          <hr />
         </>
       )}
-
       <div className="flex items-center justify-between">
         <Suspense fallback={null}>
-          {/* Wrapped in span to fix TS Error 2322 while still applying brand orange */}
-          <span className="text-primary">
-            <StockIndicator product={product} />
-          </span>
+          <StockIndicator product={product} />
         </Suspense>
       </div>
 

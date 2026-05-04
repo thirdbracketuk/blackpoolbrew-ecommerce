@@ -11,14 +11,38 @@
 @custom-variant 2xl (@media (width >= theme(--breakpoint-2xl)));
 
 @layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
   h6 {
-    font-weight: unset;
-    font-size: unset;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
   }
 }
 
@@ -105,9 +129,9 @@
   --secondary: oklch(96% 0.01 35deg);
   --secondary-foreground: oklch(25% 0.04 35deg); /* Darker for clarity */
 
-  /* MUTED: Darkened from 55.6% to 40% so it's readable at 50% opacity */
+  /* MUTED: Darkened for better readability */
   --muted: oklch(96% 0.01 35deg);
-  --muted-foreground: oklch(40% 0.03 35deg);
+  --muted-foreground: oklch(35% 0.03 35deg);
 
   --accent: oklch(94% 0.04 40deg);
   --accent-foreground: oklch(65% 0.18 35deg); /* Accent links use brand orange */
@@ -115,8 +139,8 @@
   --destructive: oklch(57.7% 0.245 27.325deg);
   --destructive-foreground: oklch(98% 0.05 25deg);
 
-  --border: oklch(90% 0.01 35deg);
-  --input: oklch(90% 0.01 35deg);
+  --border: oklch(88% 0.012 35deg);
+  --input: oklch(88% 0.012 35deg);
   --ring: oklch(65% 0.18 35deg);
 
   /* Sidebars & Charts remain brand-aligned */
@@ -126,10 +150,10 @@
   --sidebar-primary-foreground: oklch(100% 0 0deg);
   --sidebar-accent: oklch(95% 0.02 35deg);
   --sidebar-accent-foreground: oklch(65% 0.18 35deg);
-  --sidebar-border: oklch(90% 0.01 35deg);
+  --sidebar-border: oklch(88% 0.012 35deg);
   --sidebar-ring: oklch(65% 0.18 35deg);
 
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   --success: oklch(78% 0.08 150deg);
   --warning: oklch(89% 0.1 75deg);
   --error: oklch(75% 0.15 25deg);
@@ -237,5 +261,5 @@ html[data-theme='light'] {
 a,
 input,
 button {
-  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-50 dark:focus-visible:ring-neutral-600 dark:focus-visible:ring-offset-neutral-900;
+  @apply focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
 }

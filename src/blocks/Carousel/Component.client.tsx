@@ -29,7 +29,7 @@ export const CarouselClient: React.FC<{ products: Product[] }> = async ({ produc
       <CarouselContent>
         {carouselProducts.map((product, i) => (
           <CarouselItem
-            className="relative aspect-square h-[30vh] max-h-68.75 w-2/3 max-w-118.75 flex-none md:w-1/3"
+            className="relative aspect-square w-2/3 max-w-118.75 flex-none md:w-1/3"
             key={`${product.slug}${i}`}
           >
             <Link className="relative h-full w-full" href={`/products/${product.slug}`}>
