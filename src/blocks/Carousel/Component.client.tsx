@@ -7,7 +7,7 @@ import AutoScroll from 'embla-carousel-auto-scroll'
 import Link from 'next/link'
 import React from 'react'
 
-export const CarouselClient: React.FC<{ products: Product[] }> = ({ products }) => {
+export const CarouselClient: React.FC<{ products: Product[] }> = async ({ products }) => {
   if (!products?.length) return null
 
   // Purposefully duplicating products to make the carousel loop and not run out of products on wide screens.
@@ -29,10 +29,10 @@ export const CarouselClient: React.FC<{ products: Product[] }> = ({ products }) 
       <CarouselContent>
         {carouselProducts.map((product, i) => (
           <CarouselItem
-            className="relative aspect-3/4 h-[40vh] max-h-95 w-4/5 max-w-[320px] flex-none md:w-1/3 lg:w-1/4"
+            className="relative aspect-square h-[30vh] max-h-68.75 w-2/3 max-w-118.75 flex-none md:w-1/3"
             key={`${product.slug}${i}`}
           >
-            <Link className="relative h-full w-full block" href={`/products/${product.slug}`}>
+            <Link className="relative h-full w-full" href={`/products/${product.slug}`}>
               <GridTileImage
                 label={{
                   amount: product.priceInUSD!,

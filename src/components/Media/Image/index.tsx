@@ -49,11 +49,7 @@ export const Image: React.FC<MediaProps> = (props) => {
 
     const filename = fullFilename
 
-    // Use a relative path for local Payload media so Next.js image optimisation
-    // uses localPatterns instead of making a loopback HTTP request (which Next.js
-    // blocks because it resolves to the private IP 127.0.0.1).
-    const isLocalMedia = url?.startsWith('/api/media')
-    src = isLocalMedia ? (url ?? '') : `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
+    src = `${process.env.NEXT_PUBLIC_SERVER_URL}${url}`
   }
 
   // NOTE: this is used by the browser to determine which image to download at different screen sizes

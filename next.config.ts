@@ -10,11 +10,13 @@ const dirname = path.dirname(__filename)
 const NEXT_PUBLIC_SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || 'http://localhost:3000'
 
 const nextConfig: NextConfig = {
+  // Temporarily required on Windows until Next.js fixes Turbopack Sass resolution.
+  // See: https://github.com/vercel/next.js/issues/86431
   sassOptions: {
     loadPaths: ['./node_modules/@payloadcms/ui/dist/scss/'],
   },
   images: {
-    dangerouslyAllowLocalIP: true, // required for VPS — Next.js 16 blocks loopback by default
+    dangerouslyAllowLocalIP: true,
     localPatterns: [
       {
         pathname: '/api/media/file/**',
