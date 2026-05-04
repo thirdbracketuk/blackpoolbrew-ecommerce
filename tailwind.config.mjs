@@ -85,22 +85,47 @@ export default {
         error: 'hsl(var(--error))',
         warning: 'hsl(var(--warning))',
       },
+      // Replace the typography section in your tailwind.config.mjs
       typography: {
         DEFAULT: {
           css: {
-            '--tw-prose-body': 'var(--text)',
-            '--tw-prose-headings': 'var(--text)',
+            '--tw-prose-body': 'var(--foreground)',
+            '--tw-prose-headings': 'var(--foreground)',
+            fontSize: '1.125rem', // Base text (18px)
+            lineHeight: '1.7',
+            maxWidth: '75ch',
             h1: {
-              fontSize: '4rem',
-              fontWeight: 'normal',
-              marginBottom: '0.25em',
+              fontSize: '3.5rem',
+              fontWeight: '700',
+              letterSpacing: '-0.02em',
+              marginBottom: '0.6em', // Scales with size
+              lineHeight: '1.1',
+            },
+            h2: {
+              fontSize: '2.25rem',
+              fontWeight: '600',
+              marginTop: '2em',
+              marginBottom: '0.5em',
+              lineHeight: '1.2',
+            },
+            h3: {
+              fontSize: '1.75rem',
+              fontWeight: '600',
+              marginTop: '1.6em',
+              marginBottom: '0.4em',
+            },
+            p: {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
             },
             a: {
               color: 'inherit',
+              fontWeight: '500',
             },
           },
         },
       },
+
       fontFamily: {
         mono: ['var(--font-geist-mono)'],
         sans: ['var(--font-geist-sans)'],
